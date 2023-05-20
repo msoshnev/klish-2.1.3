@@ -25,4 +25,13 @@
 	    pattern="true(1) false(0)"
 	       help="Boolean choice"/>
 	<!--=======================================================-->
+  <PTYPE name="REGEXP"
+      pattern="^.+$"
+      escape_chars="\"
+      help="Valid regexp"/>
+	<!--=======================================================-->
+  <PTYPE name="SUBCOMMAND"
+      pattern="^.+$"
+      help="subcommand"/>
+
 </CLISH_MODULE>

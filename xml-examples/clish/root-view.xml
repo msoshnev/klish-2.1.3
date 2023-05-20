@@ -12,33 +12,23 @@
             <ACTION builtin="clish_close"/>
         </COMMAND>
         <!--===================================================-->
-        <COMMAND name="params"
+        <COMMAND name="testcommand"
                  help="Demonstrate the different parameter types">
-            <PARAM name="one"
-                   help="no prefix and no default"
-                  ptype="STRING"/>
-            <PARAM name="two"
-                   help="prefix but no default"
-                  ptype="STRING"
-                 prefix="-one"/>
-            <PARAM name="three"
-                   help="default and prefix"
-                   ptype="STRING"
-                  prefix="-three"
-                 default = "default-three"/>
-            <PARAM name="four"
-                   help="default but no prefix"
-                  ptype="STRING"
-               default = "default-four"/>
-               
+
+            <PARAM name="param1"
+                help="Enter param 1"
+                ptype="SUBCOMMAND"
+                mode="subcommand">
+                <PARAM name="value1"
+                    help="Enter param 1"
+                    ptype="REGEXP"/>
+            </PARAM>
+
             <ACTION>
-                echo "ONE  : ${one}"
-                echo "TWO  : ${two}"
-                echo "THREE: ${three}"
-                echo "FOUR : ${four}"
+                echo "param1  : ${value1}"
             </ACTION>
         </COMMAND>
         <!--===================================================-->
     </VIEW>
- 	<!--=======================================================-->    
+ 	<!--=======================================================-->
 </CLISH_MODULE>
