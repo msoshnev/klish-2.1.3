@@ -45,8 +45,17 @@ CLISH_PLUGIN_OSYM(clish_script)
 	assert(shebang);
 
 #ifdef DEBUG
-	fprintf(stderr, "SHEBANG: #!%s\n", shebang);
-	fprintf(stderr, "SCRIPT: %s\n", script);
+	fprintf(stderr, "[KLISH-DEBUG] SHEBANG: #!%s\n", shebang);
+	fprintf(stderr, "[KLISH-DEBUG] ACTIONer:\n");
+	fprintf(stderr, "[KLISH-DEBUG] ~~~\n");
+
+  char *script_line = strtok(script, "\n");
+  while (script_line != NULL) {
+    printf("[KLISH-DEBUG] %s\n", script_line);
+    script_line = strtok(NULL, "\n");
+  }
+
+	fprintf(stderr, "[KLISH-DEBUG] ~~~\n");
 #endif /* DEBUG */
 
 	/* Create FIFO */
